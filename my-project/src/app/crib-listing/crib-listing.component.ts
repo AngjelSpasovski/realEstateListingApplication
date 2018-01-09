@@ -10,9 +10,9 @@ import 'rxjs/add/operator/map';
 })
 export class CribListingComponent implements OnInit {
 
-	/* Local creation of the array with any types */
-	/* Asign to cribsData data */
+	// Initializing
 	cribs: Array<any>;
+	error: string;
 
 	// private instance of the http
 	constructor(private http: Http) { }
@@ -25,7 +25,8 @@ export class CribListingComponent implements OnInit {
 			.map(res => res.json())
 			// observabels
 			.subscribe(
-				data => this.cribs = data 
+				data => this.cribs = data,
+				error => this.error = error.statusText
 			);
 	}
 
