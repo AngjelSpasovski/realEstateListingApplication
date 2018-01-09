@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { cribsData } from  './../data/cribs'
-
+import { Http } from '@angular/http';
+// transform the value that comes from http request
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-crib-listing',
@@ -11,11 +12,21 @@ export class CribListingComponent implements OnInit {
 
 	/* Local creation of the array with any types */
 	/* Asign to cribsData data */
-	cribs: Array<any> = cribsData;
+	cribs: Array<any>;
 
-	constructor() { }
+	// private instance of the http
+	constructor(private http: Http) { }
 
 	ngOnInit() {
+
+		// make a http request			
+		this.http.get("data/cribs.json")
+			// whatever we gets we maped as json
+			.map(res => res.json())
+			// observabels
+			.subscribe(
+				data => this.cribs = data 
+			);
 	}
 
 }

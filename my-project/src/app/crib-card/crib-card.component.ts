@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Crib } from './../crib.ts';
+import { Crib } from './../crib';
 
 @Component({
   selector: 'app-crib-card',
@@ -15,8 +15,8 @@ export class CribCardComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
-		let beadroom = this.crib.beadrooms;
-		let kitchen = this.crib.kitchens;
+		let beadroom = this.crib.bedrooms;
+		//let kitchen = this.crib.kitchen;
 	}
 
 }
