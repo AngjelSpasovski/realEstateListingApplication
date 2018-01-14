@@ -1,3 +1,4 @@
+import { by } from 'protractor';
 import { Component, OnInit, Input } from '@angular/core';
 import { Crib } from './../crib';
 
@@ -15,8 +16,7 @@ export class CribCardComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
-		let beadroom = this.crib.bedrooms;
-		//let kitchen = this.crib.kitchen;
+		
 	}
 
 }

@@ -40,15 +40,12 @@
           class="form-control"
           ngModel
           required>
-          <!-- Option dropdown Block -->
-          <option>
-          	<p>Condo</p>
-          </option>
-          <!-- <option
+          <!-- Optional dropdown Block -->
+          <option
             *ngFor="let type of propertyTypes"
             [value]="type">
               {{ utilService.capitalize(type) }}
-          </option> -->
+          </option>
         </select>
       </div>
       <!-- Description Block -->
